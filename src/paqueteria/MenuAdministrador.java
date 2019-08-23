@@ -44,6 +44,21 @@ public class MenuAdministrador extends javax.swing.JFrame {
         btnAtras = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         btnAgregar = new javax.swing.JButton();
+        cajaTextoDato3 = new javax.swing.JTextField();
+        lblCajaTexto3 = new javax.swing.JLabel();
+        lblTitulo2 = new javax.swing.JLabel();
+        panelModificarRutas = new javax.swing.JPanel();
+        comboBoxPuntosControl = new javax.swing.JComboBox<>();
+        cajaTextoNuevaTarifaPControl = new javax.swing.JTextField();
+        lblNuevoNombreRuta = new javax.swing.JLabel();
+        lblNuevaTarifaPuntoControl = new javax.swing.JLabel();
+        btnGuardarNombre = new javax.swing.JButton();
+        cajaTextoNuevoNombrePControl = new javax.swing.JTextField();
+        cajaTextoNuevoNombreRuta = new javax.swing.JTextField();
+        NuevoNombrePuntoControl = new javax.swing.JLabel();
+        lblCodigoPControl = new javax.swing.JLabel();
+        btnGuardarCambios = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1200, 800));
@@ -64,18 +79,43 @@ public class MenuAdministrador extends javax.swing.JFrame {
 
         btnModificarRutas.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
         btnModificarRutas.setText("Modificar rutas");
+        btnModificarRutas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarRutasActionPerformed(evt);
+            }
+        });
 
         btnCrearDestinos.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
         btnCrearDestinos.setText("Crear destinos");
+        btnCrearDestinos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearDestinosActionPerformed(evt);
+            }
+        });
 
         btnModificarDestinos.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
         btnModificarDestinos.setText("Modificar destinos");
+        btnModificarDestinos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarDestinosActionPerformed(evt);
+            }
+        });
 
         btnModificarTarifaGlobal.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
         btnModificarTarifaGlobal.setText("Modificar tarifa global");
+        btnModificarTarifaGlobal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarTarifaGlobalActionPerformed(evt);
+            }
+        });
 
         btnReportes.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
         btnReportes.setText("Reportes");
+        btnReportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReportesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelOpcionesLayout = new javax.swing.GroupLayout(panelOpciones);
         panelOpciones.setLayout(panelOpcionesLayout);
@@ -143,6 +183,9 @@ public class MenuAdministrador extends javax.swing.JFrame {
             }
         });
 
+        lblCajaTexto3.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        lblCajaTexto3.setText("jLabel1");
+
         javax.swing.GroupLayout panelDatosLayout = new javax.swing.GroupLayout(panelDatos);
         panelDatos.setLayout(panelDatosLayout);
         panelDatosLayout.setHorizontalGroup(
@@ -151,23 +194,29 @@ public class MenuAdministrador extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(panelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblCajaTexto2)
-                    .addComponent(lblCajaTexto1))
+                    .addComponent(lblCajaTexto1)
+                    .addComponent(lblCajaTexto3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(panelDatosLayout.createSequentialGroup()
-                        .addComponent(btnAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cajaTextoDato3)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatosLayout.createSequentialGroup()
+                        .addComponent(btnAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(panelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(cajaTextoDato2, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cajaTextoDato1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cajaTextoDato2)
+                    .addComponent(cajaTextoDato1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelDatosLayout.setVerticalGroup(
             panelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatosLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panelDatosLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(panelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cajaTextoDato3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCajaTexto3))
+                .addGap(11, 11, 11)
                 .addGroup(panelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(panelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lblCajaTexto2)
@@ -183,23 +232,131 @@ public class MenuAdministrador extends javax.swing.JFrame {
                     .addComponent(btnAgregar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAtras)
-                .addGap(648, 648, 648))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        lblTitulo2.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        lblTitulo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitulo2.setText("CREAR RUTAS");
+
+        comboBoxPuntosControl.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        lblNuevoNombreRuta.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        lblNuevoNombreRuta.setText("Nuevo nombre ruta:");
+
+        lblNuevaTarifaPuntoControl.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        lblNuevaTarifaPuntoControl.setText("Nueva tarifa punto de control:");
+
+        btnGuardarNombre.setText("guardar nombre");
+
+        NuevoNombrePuntoControl.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        NuevoNombrePuntoControl.setText("Nuevo nombre punto de control:");
+
+        lblCodigoPControl.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        lblCodigoPControl.setText("codigo de punto de control a modificar:");
+
+        btnGuardarCambios.setText("guardar cambios");
+
+        btnSalir.setText("salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelModificarRutasLayout = new javax.swing.GroupLayout(panelModificarRutas);
+        panelModificarRutas.setLayout(panelModificarRutasLayout);
+        panelModificarRutasLayout.setHorizontalGroup(
+            panelModificarRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelModificarRutasLayout.createSequentialGroup()
+                .addGroup(panelModificarRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelModificarRutasLayout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addGroup(panelModificarRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblNuevoNombreRuta)
+                            .addComponent(NuevoNombrePuntoControl)
+                            .addComponent(lblNuevaTarifaPuntoControl)))
+                    .addGroup(panelModificarRutasLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblCodigoPControl)))
+                .addGroup(panelModificarRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelModificarRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panelModificarRutasLayout.createSequentialGroup()
+                            .addGap(30, 30, 30)
+                            .addComponent(cajaTextoNuevaTarifaPControl, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelModificarRutasLayout.createSequentialGroup()
+                            .addGap(32, 32, 32)
+                            .addGroup(panelModificarRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelModificarRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(panelModificarRutasLayout.createSequentialGroup()
+                                        .addComponent(comboBoxPuntosControl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnGuardarCambios))
+                                    .addComponent(cajaTextoNuevoNombrePControl, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnGuardarNombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnSalir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelModificarRutasLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(cajaTextoNuevoNombreRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+        panelModificarRutasLayout.setVerticalGroup(
+            panelModificarRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelModificarRutasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelModificarRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cajaTextoNuevoNombreRuta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNuevoNombreRuta))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelModificarRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelModificarRutasLayout.createSequentialGroup()
+                        .addComponent(btnGuardarNombre)
+                        .addGap(11, 11, 11)
+                        .addGroup(panelModificarRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cajaTextoNuevaTarifaPControl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblNuevaTarifaPuntoControl))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelModificarRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cajaTextoNuevoNombrePControl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NuevoNombrePuntoControl))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnGuardarCambios)
+                        .addGap(0, 2, Short.MAX_VALUE))
+                    .addGroup(panelModificarRutasLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(panelModificarRutasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(comboBoxPuntosControl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblCodigoPControl))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSalir)
+                .addGap(27, 27, 27))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(panelOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 696, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(115, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTitulo)
-                .addGap(312, 312, 312))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lblTitulo)
+                        .addGap(312, 312, 312))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(panelOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(lblTitulo2, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(38, 38, 38)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(12, 12, 12)
+                                        .addComponent(panelModificarRutas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(panelDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 707, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(72, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -211,9 +368,13 @@ public class MenuAdministrador extends javax.swing.JFrame {
                         .addGap(51, 51, 51)
                         .addComponent(panelOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(96, 96, 96)
-                        .addComponent(panelDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(226, Short.MAX_VALUE))
+                        .addGap(58, 58, 58)
+                        .addComponent(lblTitulo2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(panelDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(panelModificarRutas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(610, Short.MAX_VALUE))
         );
 
         pack();
@@ -222,46 +383,74 @@ public class MenuAdministrador extends javax.swing.JFrame {
     private void btnCrearRutasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearRutasActionPerformed
         // TODO add your handling code here:
         modificarEstadoBotonesPanelOpciones(false);
+        activarComponentesPanelDatos(true, true, true, true, true, false, true, true, false);
         panelDatos.setVisible(true);
+        lblTitulo2.setText("CREAR RUTAS");
         establecerTextosCrearRutaParte1();
     }//GEN-LAST:event_btnCrearRutasActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
         String textoBoton = btnGuardar.getText();
-        if(textoBoton == "siguiente"){
+        String titulo2 = lblTitulo2.getText();
+        
+        if(titulo2 == "CREAR RUTAS" || titulo2 == "MODIFICAR RUTAS" || titulo2 == "CREAR DESTINOS" || titulo2 == "MODIFICAR DESTINOS" || titulo2 == "MODIFICAR TARIFA GLOBAL"){
             panelDatos.setVisible(false);            
             modificarEstadoBotonesPanelOpciones(true);
-        }        
-        if(textoBoton == "guardar ruta"){
-            establecerTextosCrearRutaParte1(); 
+            lblTitulo2.setVisible(false);
         }
     }//GEN-LAST:event_btnAtrasActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         String textoBoton = btnGuardar.getText();
-        if(textoBoton == "siguiente"){
+        String titulo2 = lblTitulo2.getText();
+        if(titulo2 == "CREAR RUTAS"){
             btnAgregar.setVisible(true);
-            cambiarTextoLabelsDatos("Nombre del punto de control:", "Ingresar codigo del punto de control:");
+            cambiarTextoLabelsDatos("Nombre del punto de control:", "Ingresar codigo del punto de control:", "");
             cambiarTextoBtnGuardar("guardar ruta");
             btnAtras.setVisible(false);
-        }        
-        if(textoBoton == "guardar ruta"){
+            lblTitulo2.setText("AGREGAR PUNTOS DE CONTROL");
+        }
+        if(titulo2 == "AGREGAR PUNTOS DE CONTROL"){
             modificarEstadoBotonesPanelOpciones(true);
             panelDatos.setVisible(false); 
             btnAtras.setVisible(true);
+            lblTitulo2.setVisible(false);
+        }
+        if(titulo2 == "MODIFICAR RUTAS"){
+            panelModificarRutas.setVisible(true);
+            panelDatos.setVisible(false);
+            
+        }
+        if(titulo2 == "CREAR DESTINOS"){
+            modificarEstadoBotonesPanelOpciones(true);
+            panelDatos.setVisible(false); 
+            lblTitulo2.setVisible(false);
+            
+        }  
+        if(titulo2 == "MODIFICAR DESTINOS"){
+            modificarEstadoBotonesPanelOpciones(true);
+            panelDatos.setVisible(false); 
+            lblTitulo2.setVisible(false);
+        }  
+        if(titulo2 == "MODIFICAR TARIFA GLOBAL"){
+            modificarEstadoBotonesPanelOpciones(true);
+            panelDatos.setVisible(false); 
+            lblTitulo2.setVisible(false);
+            
         } 
         
     }//GEN-LAST:event_btnGuardarActionPerformed
     
     private void establecerTextosCrearRutaParte1(){
         btnAgregar.setVisible(false);
-        cambiarTextoLabelsDatos("Nombre de la ruta:", "Ingresar codigo de ruta:");
+        cambiarTextoLabelsDatos("Nombre de la ruta:", "Ingresar codigo de ruta:", "");
         cambiarTextoBtnGuardar("siguiente");
     }
     
-    private void cambiarTextoLabelsDatos(String textoLabel1, String textoLabel2){
+    private void cambiarTextoLabelsDatos(String textoLabel1, String textoLabel2, String textoLabel3){
         lblCajaTexto1.setText(textoLabel1);
         lblCajaTexto2.setText(textoLabel2);
+        lblCajaTexto3.setText(textoLabel3);
     }
     
     private void cambiarTextoBtnGuardar(String textoBtnGuardar){
@@ -271,6 +460,58 @@ public class MenuAdministrador extends javax.swing.JFrame {
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void btnModificarRutasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarRutasActionPerformed
+        // TODO add your handling code here:
+        activarComponentesPanelDatos(false, true, true, false, true, false, false, true, false);
+        modificarEstadoBotonesPanelOpciones(false);
+        panelDatos.setVisible(true);
+        lblTitulo2.setText("MODIFICAR RUTAS");
+        btnGuardar.setText("modificar ruta");
+    }//GEN-LAST:event_btnModificarRutasActionPerformed
+
+    private void btnCrearDestinosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearDestinosActionPerformed
+        // TODO add your handling code here:
+        panelDatos.setVisible(true);
+        activarComponentesPanelDatos(false, true, true, true, true, true, true, true, true);
+        modificarEstadoBotonesPanelOpciones(false);
+        btnGuardar.setText("guardar");
+        cambiarTextoLabelsDatos("Codigo destino", "Tarifa destino", "Nombre destino:");
+        lblTitulo2.setText("CREAR DESTINOS");
+    }//GEN-LAST:event_btnCrearDestinosActionPerformed
+
+    private void btnModificarDestinosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarDestinosActionPerformed
+        // TODO add your handling code here:
+        panelDatos.setVisible(true);
+        activarComponentesPanelDatos(false, true, true, true, true, true, true, true, true);
+        modificarEstadoBotonesPanelOpciones(false);
+        btnGuardar.setText("guardar");
+        cambiarTextoLabelsDatos("Codigo destino", "Nueva tarifa destino", "Nuevo nombre destino:");
+        lblTitulo2.setText("MODIFICAR DESTINOS");
+    }//GEN-LAST:event_btnModificarDestinosActionPerformed
+
+    private void btnModificarTarifaGlobalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarTarifaGlobalActionPerformed
+        // TODO add your handling code here:
+        panelDatos.setVisible(true);
+        activarComponentesPanelDatos(false, true, true, true, false, false, true, false, false);
+        modificarEstadoBotonesPanelOpciones(false);
+        btnGuardar.setText("guardar");
+        cambiarTextoLabelsDatos("Nueva tarifa global:", "", "");
+        lblTitulo2.setText("MODIFICAR TARIFA GLOBAL");
+    }//GEN-LAST:event_btnModificarTarifaGlobalActionPerformed
+
+    private void btnReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportesActionPerformed
+        // TODO add your handling code here:
+        VentanaReportesAdministrador reportes = new VentanaReportesAdministrador();
+        reportes.setVisible(true);
+    }//GEN-LAST:event_btnReportesActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // TODO add your handling code here:
+        modificarEstadoBotonesPanelOpciones(true);
+        panelModificarRutas.setVisible(false); 
+        lblTitulo2.setVisible(false);
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     private void modificarEstadoBotonesPanelOpciones(boolean estado){
         btnCrearRutas.setEnabled(estado);
@@ -317,26 +558,57 @@ public class MenuAdministrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel NuevoNombrePuntoControl;
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnCrearDestinos;
     private javax.swing.JButton btnCrearRutas;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnGuardarCambios;
+    private javax.swing.JButton btnGuardarNombre;
     private javax.swing.JButton btnModificarDestinos;
     private javax.swing.JButton btnModificarRutas;
     private javax.swing.JButton btnModificarTarifaGlobal;
     private javax.swing.JButton btnReportes;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JTextField cajaTextoDato1;
     private javax.swing.JTextField cajaTextoDato2;
+    private javax.swing.JTextField cajaTextoDato3;
+    private javax.swing.JTextField cajaTextoNuevaTarifaPControl;
+    private javax.swing.JTextField cajaTextoNuevoNombrePControl;
+    private javax.swing.JTextField cajaTextoNuevoNombreRuta;
+    private javax.swing.JComboBox<String> comboBoxPuntosControl;
     private javax.swing.JLabel lblCajaTexto1;
     private javax.swing.JLabel lblCajaTexto2;
+    private javax.swing.JLabel lblCajaTexto3;
+    private javax.swing.JLabel lblCodigoPControl;
+    private javax.swing.JLabel lblNuevaTarifaPuntoControl;
+    private javax.swing.JLabel lblNuevoNombreRuta;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblTitulo2;
     private javax.swing.JPanel panelDatos;
+    private javax.swing.JPanel panelModificarRutas;
     private javax.swing.JPanel panelOpciones;
     // End of variables declaration//GEN-END:variables
 
     private void desactivarPaneles() {
         panelDatos.setVisible(false);
-        
+        lblCajaTexto3.setVisible(false);
+        cajaTextoDato3.setVisible(false);
+        lblTitulo2.setVisible(false);   
+        panelModificarRutas.setVisible(false);
+    }
+    
+    private void activarComponentesPanelDatos(boolean estadoBtnAgregar, boolean estadoBtnAtras, boolean estadoBtnGuardar,boolean estadoLblCT1, boolean estadoLblCT2, boolean estadoLblCT3 , boolean estadoBtnCT1, boolean estadoBtnCT2, boolean estadoBtnCT3){
+        btnAgregar.setVisible(estadoBtnAgregar);
+        btnAtras.setVisible(estadoBtnAtras);
+        btnGuardar.setVisible(estadoBtnGuardar);
+        lblCajaTexto1.setVisible(estadoLblCT1);
+        lblCajaTexto2.setVisible(estadoLblCT2);
+        lblCajaTexto3.setVisible(estadoLblCT3);
+        cajaTextoDato1.setVisible(estadoBtnCT1);
+        cajaTextoDato2.setVisible(estadoBtnCT2);
+        cajaTextoDato3.setVisible(estadoBtnCT3);
+        lblTitulo2.setVisible(true);        
     }
 }
