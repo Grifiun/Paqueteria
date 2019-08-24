@@ -61,9 +61,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        /*MenuAdministrador menuAdmin = new MenuAdministrador();
        menuAdmin.setVisible(true);
-       */
+       *//*
        MenuOperador menuOperador = new MenuOperador();
-       menuOperador.setVisible(true);
+       menuOperador.setVisible(true);*/
+       MenuRecepcionista menuRecepcionista = new MenuRecepcionista();
+       menuRecepcionista.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

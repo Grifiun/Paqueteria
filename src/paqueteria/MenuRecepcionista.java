@@ -16,6 +16,7 @@ public class MenuRecepcionista extends javax.swing.JFrame {
      */
     public MenuRecepcionista() {
         initComponents();
+        visibilidadPaneles(true, false, false);
     }
 
     /**
@@ -27,32 +28,369 @@ public class MenuRecepcionista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblMenuRecepcionista = new javax.swing.JLabel();
+        lblNombreRecepcionista = new javax.swing.JLabel();
+        grupoTablas = new javax.swing.JTabbedPane();
+        opcionPaquetesSinRecoger = new javax.swing.JScrollPane();
+        tablaPaquetesSinRecoger = new javax.swing.JTable();
+        opcionLocalizacionPaquetes = new javax.swing.JScrollPane();
+        tablaLocalizacionPaquetes = new javax.swing.JTable();
+        panelIngresarPaquete = new javax.swing.JPanel();
+        lblIngresarPaquete = new javax.swing.JLabel();
+        panelDatosCliente = new javax.swing.JPanel();
+        lblNitCliente = new javax.swing.JLabel();
+        cajaTextoNitCliente = new javax.swing.JTextField();
+        cajaTextoAnio = new javax.swing.JTextField();
+        lblAnio = new javax.swing.JLabel();
+        lblMes = new javax.swing.JLabel();
+        cajaTextoMes = new javax.swing.JTextField();
+        cajaTextoDia = new javax.swing.JTextField();
+        lblDia = new javax.swing.JLabel();
+        btnVerificarNit = new javax.swing.JButton();
+        panelIngresarPaquetes = new javax.swing.JPanel();
+        comboBoxPrioridad = new javax.swing.JComboBox<>();
+        lblPesoPaquete = new javax.swing.JLabel();
+        btnIngresar = new javax.swing.JButton();
+        lblPrioridad = new javax.swing.JLabel();
+        cajaTextoPesoPaquete = new javax.swing.JTextField();
+        btnFacturar = new javax.swing.JButton();
+        panelCrearCliente = new javax.swing.JPanel();
+        cajaTextoNombre = new javax.swing.JTextField();
+        lblNombre = new javax.swing.JLabel();
+        lblEdad = new javax.swing.JLabel();
+        lblCui = new javax.swing.JLabel();
+        cajaTextoCUI = new javax.swing.JTextField();
+        cajaTextoEdad = new javax.swing.JTextField();
+        btnCrearCliente = new javax.swing.JButton();
+        lblIngreseDatosCliente = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 48)); // NOI18N
-        jLabel1.setText("MENU RECEPCIONISTA");
+        lblMenuRecepcionista.setFont(new java.awt.Font("Ubuntu", 1, 48)); // NOI18N
+        lblMenuRecepcionista.setText("MENU RECEPCIONISTA");
+
+        lblNombreRecepcionista.setText("jLabel2");
+
+        tablaPaquetesSinRecoger.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        tablaPaquetesSinRecoger.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Cod paquete", "Nombre cliente", "Nit cliente", "Destino", "Pago"
+            }
+        ));
+        opcionPaquetesSinRecoger.setViewportView(tablaPaquetesSinRecoger);
+
+        grupoTablas.addTab("Paquetes sin recoger", opcionPaquetesSinRecoger);
+
+        tablaLocalizacionPaquetes.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        tablaLocalizacionPaquetes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Cod paquete", "Nombre cliente", "Nit", "P. Control", "N. P. Control", "Ruta", "Tiempo en ruta"
+            }
+        ));
+        opcionLocalizacionPaquetes.setViewportView(tablaLocalizacionPaquetes);
+
+        grupoTablas.addTab("Localizacion paquetes", opcionLocalizacionPaquetes);
+
+        lblIngresarPaquete.setFont(new java.awt.Font("Ubuntu", 1, 36)); // NOI18N
+        lblIngresarPaquete.setText("INGRESAR PAQUETE");
+
+        lblNitCliente.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        lblNitCliente.setText("Nit cliente:");
+
+        lblAnio.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        lblAnio.setText("Año:");
+
+        lblMes.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        lblMes.setText("Mes:");
+
+        lblDia.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        lblDia.setText("Dia:");
+
+        btnVerificarNit.setText("verificar nit");
+        btnVerificarNit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerificarNitActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelDatosClienteLayout = new javax.swing.GroupLayout(panelDatosCliente);
+        panelDatosCliente.setLayout(panelDatosClienteLayout);
+        panelDatosClienteLayout.setHorizontalGroup(
+            panelDatosClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelDatosClienteLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(panelDatosClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblMes)
+                    .addComponent(lblNitCliente)
+                    .addComponent(lblAnio)
+                    .addComponent(lblDia))
+                .addGap(18, 18, 18)
+                .addGroup(panelDatosClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelDatosClienteLayout.createSequentialGroup()
+                        .addGroup(panelDatosClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cajaTextoAnio, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(cajaTextoNitCliente))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatosClienteLayout.createSequentialGroup()
+                        .addGroup(panelDatosClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cajaTextoMes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
+                            .addComponent(cajaTextoDia))
+                        .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDatosClienteLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnVerificarNit)
+                .addContainerGap())
+        );
+        panelDatosClienteLayout.setVerticalGroup(
+            panelDatosClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelDatosClienteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelDatosClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNitCliente)
+                    .addComponent(cajaTextoNitCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelDatosClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cajaTextoAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAnio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelDatosClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblMes)
+                    .addComponent(cajaTextoMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelDatosClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cajaTextoDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblDia))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnVerificarNit)
+                .addContainerGap(13, Short.MAX_VALUE))
+        );
+
+        comboBoxPrioridad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No", "Si" }));
+
+        lblPesoPaquete.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        lblPesoPaquete.setText("Peso del paquete:");
+
+        btnIngresar.setText("Ingresar");
+
+        lblPrioridad.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        lblPrioridad.setText("Prioridad:");
+
+        btnFacturar.setText("facturar");
+        btnFacturar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacturarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelIngresarPaquetesLayout = new javax.swing.GroupLayout(panelIngresarPaquetes);
+        panelIngresarPaquetes.setLayout(panelIngresarPaquetesLayout);
+        panelIngresarPaquetesLayout.setHorizontalGroup(
+            panelIngresarPaquetesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelIngresarPaquetesLayout.createSequentialGroup()
+                .addGroup(panelIngresarPaquetesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panelIngresarPaquetesLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnIngresar)
+                        .addGap(2, 2, 2)
+                        .addComponent(btnFacturar))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelIngresarPaquetesLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(panelIngresarPaquetesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblPrioridad)
+                            .addComponent(lblPesoPaquete))
+                        .addGap(18, 18, 18)
+                        .addGroup(panelIngresarPaquetesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(cajaTextoPesoPaquete, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(comboBoxPrioridad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+        panelIngresarPaquetesLayout.setVerticalGroup(
+            panelIngresarPaquetesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelIngresarPaquetesLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(panelIngresarPaquetesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPesoPaquete)
+                    .addComponent(cajaTextoPesoPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelIngresarPaquetesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(comboBoxPrioridad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPrioridad))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelIngresarPaquetesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnIngresar)
+                    .addComponent(btnFacturar))
+                .addGap(91, 91, 91))
+        );
+
+        lblNombre.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        lblNombre.setText("Nombre:");
+
+        lblEdad.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        lblEdad.setText("Edad:");
+
+        lblCui.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        lblCui.setText("CUI:");
+
+        btnCrearCliente.setText("Crear cliente");
+        btnCrearCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearClienteActionPerformed(evt);
+            }
+        });
+
+        lblIngreseDatosCliente.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        lblIngreseDatosCliente.setText("INGRESE LOS DATOS PARA NUEVO CLIENTE");
+
+        javax.swing.GroupLayout panelCrearClienteLayout = new javax.swing.GroupLayout(panelCrearCliente);
+        panelCrearCliente.setLayout(panelCrearClienteLayout);
+        panelCrearClienteLayout.setHorizontalGroup(
+            panelCrearClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCrearClienteLayout.createSequentialGroup()
+                .addGroup(panelCrearClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelCrearClienteLayout.createSequentialGroup()
+                        .addGroup(panelCrearClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelCrearClienteLayout.createSequentialGroup()
+                                .addGap(104, 104, 104)
+                                .addGroup(panelCrearClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblEdad)
+                                    .addComponent(lblCui)))
+                            .addGroup(panelCrearClienteLayout.createSequentialGroup()
+                                .addGap(76, 76, 76)
+                                .addComponent(lblNombre)))
+                        .addGap(4, 4, 4)
+                        .addGroup(panelCrearClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cajaTextoEdad)
+                            .addComponent(cajaTextoNombre, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cajaTextoCUI, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCrearClienteLayout.createSequentialGroup()
+                        .addGap(0, 155, Short.MAX_VALUE)
+                        .addGroup(panelCrearClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnCrearCliente, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblIngreseDatosCliente, javax.swing.GroupLayout.Alignment.TRAILING))))
+                .addContainerGap())
+        );
+        panelCrearClienteLayout.setVerticalGroup(
+            panelCrearClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCrearClienteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblIngreseDatosCliente)
+                .addGap(11, 11, 11)
+                .addGroup(panelCrearClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNombre)
+                    .addComponent(cajaTextoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelCrearClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cajaTextoEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblEdad))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelCrearClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCui)
+                    .addComponent(cajaTextoCUI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnCrearCliente)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout panelIngresarPaqueteLayout = new javax.swing.GroupLayout(panelIngresarPaquete);
+        panelIngresarPaquete.setLayout(panelIngresarPaqueteLayout);
+        panelIngresarPaqueteLayout.setHorizontalGroup(
+            panelIngresarPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelIngresarPaqueteLayout.createSequentialGroup()
+                .addContainerGap(377, Short.MAX_VALUE)
+                .addGroup(panelIngresarPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelCrearCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelIngresarPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelIngresarPaqueteLayout.createSequentialGroup()
+                            .addComponent(lblIngresarPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(82, 82, 82))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelIngresarPaqueteLayout.createSequentialGroup()
+                            .addComponent(panelDatosCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(55, 55, 55))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelIngresarPaqueteLayout.createSequentialGroup()
+                            .addComponent(panelIngresarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(38, 38, 38))))
+                .addGap(291, 291, 291))
+        );
+        panelIngresarPaqueteLayout.setVerticalGroup(
+            panelIngresarPaqueteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelIngresarPaqueteLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblIngresarPaquete, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelDatosCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelIngresarPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelCrearCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(96, 96, 96))
+        );
+
+        grupoTablas.addTab("Ingreso paquetes", panelIngresarPaquete);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(364, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(302, 302, 302))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblMenuRecepcionista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblNombreRecepcionista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(300, 300, 300))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(grupoTablas)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(109, 109, 109)
-                .addComponent(jLabel1)
-                .addContainerGap(635, Short.MAX_VALUE))
+                .addGap(68, 68, 68)
+                .addComponent(lblMenuRecepcionista)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblNombreRecepcionista)
+                .addGap(34, 34, 34)
+                .addComponent(grupoTablas, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(78, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnVerificarNitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificarNitActionPerformed
+        // TODO add your handling code here:
+        //EJEMPLO DE OCULTAR PANELES
+        String nit = cajaTextoNitCliente.getText();
+        System.out.println(nit);
+        if(nit.equals("1")){
+            visibilidadPaneles(false, true, false);
+        }
+        if(nit.equals("2")){
+            visibilidadPaneles(false, false, true);
+        }
+    }//GEN-LAST:event_btnVerificarNitActionPerformed
+
+    private void btnFacturarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturarActionPerformed
+        // TODO add your handling code here:
+        visibilidadPaneles(true, false, false);
+    }//GEN-LAST:event_btnFacturarActionPerformed
+
+    private void btnCrearClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearClienteActionPerformed
+        // TODO add your handling code here:
+        visibilidadPaneles(false, true, false);
+    }//GEN-LAST:event_btnCrearClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -84,12 +422,52 @@ public class MenuRecepcionista extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuRecepcionista().setVisible(true);
+                new MenuRecepcionista().setVisible(true);                
             }
         });
     }
 
+    private void visibilidadPaneles(boolean visibilidadPanelIngresarDatosCliente, boolean visibilidadPanelIngresarPaquetes, boolean visibilidadPanelCrearCliente){
+        panelCrearCliente.setVisible(visibilidadPanelCrearCliente);
+        panelDatosCliente.setVisible(visibilidadPanelIngresarDatosCliente);
+        panelIngresarPaquetes.setVisible(visibilidadPanelIngresarPaquetes);
+    }    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnCrearCliente;
+    private javax.swing.JButton btnFacturar;
+    private javax.swing.JButton btnIngresar;
+    private javax.swing.JButton btnVerificarNit;
+    private javax.swing.JTextField cajaTextoAnio;
+    private javax.swing.JTextField cajaTextoCUI;
+    private javax.swing.JTextField cajaTextoDia;
+    private javax.swing.JTextField cajaTextoEdad;
+    private javax.swing.JTextField cajaTextoMes;
+    private javax.swing.JTextField cajaTextoNitCliente;
+    private javax.swing.JTextField cajaTextoNombre;
+    private javax.swing.JTextField cajaTextoPesoPaquete;
+    private javax.swing.JComboBox<String> comboBoxPrioridad;
+    private javax.swing.JTabbedPane grupoTablas;
+    private javax.swing.JLabel lblAnio;
+    private javax.swing.JLabel lblCui;
+    private javax.swing.JLabel lblDia;
+    private javax.swing.JLabel lblEdad;
+    private javax.swing.JLabel lblIngresarPaquete;
+    private javax.swing.JLabel lblIngreseDatosCliente;
+    private javax.swing.JLabel lblMenuRecepcionista;
+    private javax.swing.JLabel lblMes;
+    private javax.swing.JLabel lblNitCliente;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblNombreRecepcionista;
+    private javax.swing.JLabel lblPesoPaquete;
+    private javax.swing.JLabel lblPrioridad;
+    private javax.swing.JScrollPane opcionLocalizacionPaquetes;
+    private javax.swing.JScrollPane opcionPaquetesSinRecoger;
+    private javax.swing.JPanel panelCrearCliente;
+    private javax.swing.JPanel panelDatosCliente;
+    private javax.swing.JPanel panelIngresarPaquete;
+    private javax.swing.JPanel panelIngresarPaquetes;
+    private javax.swing.JTable tablaLocalizacionPaquetes;
+    private javax.swing.JTable tablaPaquetesSinRecoger;
     // End of variables declaration//GEN-END:variables
 }
