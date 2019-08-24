@@ -16,6 +16,7 @@ public class MenuOperador extends javax.swing.JFrame {
      */
     public MenuOperador() {
         initComponents();
+        comboBoxPaquetes.setEnabled(false);
     }
 
     /**
@@ -28,31 +29,249 @@ public class MenuOperador extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        lblNombreOperador = new javax.swing.JLabel();
+        lblPuntosControlAsignados = new javax.swing.JLabel();
+        LblCantidadPuntosControlAsignados = new javax.swing.JLabel();
+        panelDatos = new javax.swing.JPanel();
+        lblSeleccionaPuntoControl = new javax.swing.JLabel();
+        lblSeleccionaPaquete = new javax.swing.JLabel();
+        comboBoxPuntoControl = new javax.swing.JComboBox<>();
+        comboBoxPaquetes = new javax.swing.JComboBox<>();
+        lblCantidadHoras = new javax.swing.JLabel();
+        cajaTextoHoras = new javax.swing.JTextField();
+        btnGuardar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 48)); // NOI18N
         jLabel1.setText("MENU OPERADOR");
 
+        lblNombreOperador.setText("jLabel2");
+
+        lblPuntosControlAsignados.setText("Puntos de control asignados: ");
+
+        LblCantidadPuntosControlAsignados.setText("jLabel2");
+
+        lblSeleccionaPuntoControl.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        lblSeleccionaPuntoControl.setText("Selecciona el punto de control:");
+
+        lblSeleccionaPaquete.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        lblSeleccionaPaquete.setText("Selecciona el paquete:");
+
+        comboBoxPuntoControl.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "puntos", " " }));
+        comboBoxPuntoControl.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboBoxPuntoControlItemStateChanged(evt);
+            }
+        });
+        comboBoxPuntoControl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxPuntoControlActionPerformed(evt);
+            }
+        });
+
+        comboBoxPaquetes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ej" }));
+
+        lblCantidadHoras.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        lblCantidadHoras.setText("Ingresa la cantidad de horas:");
+
+        btnGuardar.setText("guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("atras");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelDatosLayout = new javax.swing.GroupLayout(panelDatos);
+        panelDatos.setLayout(panelDatosLayout);
+        panelDatosLayout.setHorizontalGroup(
+            panelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelDatosLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(panelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblCantidadHoras)
+                    .addComponent(lblSeleccionaPaquete)
+                    .addComponent(lblSeleccionaPuntoControl))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
+                    .addGroup(panelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(comboBoxPuntoControl, 0, 109, Short.MAX_VALUE)
+                        .addComponent(comboBoxPaquetes, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cajaTextoHoras)))
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+        panelDatosLayout.setVerticalGroup(
+            panelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelDatosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(comboBoxPuntoControl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSeleccionaPuntoControl))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(comboBoxPaquetes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSeleccionaPaquete))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCantidadHoras)
+                    .addComponent(cajaTextoHoras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnGuardar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jTable1.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Cod punto control", "Cod ruta", "Paquetes en cola", "Tarifa (en Q)", "Estado"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 575, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(468, 468, 468)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblPuntosControlAsignados)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LblCantidadPuntosControlAsignados))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblNombreOperador, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(424, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(352, 352, 352))
+                .addGap(0, 56, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(panelDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(130, 130, 130)
+                .addGap(51, 51, 51)
                 .addComponent(jLabel1)
-                .addContainerGap(614, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblNombreOperador)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPuntosControlAsignados)
+                    .addComponent(LblCantidadPuntosControlAsignados))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(74, 74, 74)
+                        .addComponent(panelDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void comboBoxPuntoControlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxPuntoControlActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboBoxPuntoControlActionPerformed
+
+    private void comboBoxPuntoControlItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboBoxPuntoControlItemStateChanged
+        // TODO add your handling code here:        
+        comboBoxPaquetes.removeAllItems();
+        comboBoxPuntoControl.setEnabled(false);
+        comboBoxPaquetes.setEnabled(true);
+        if(comboBoxPuntoControl.getSelectedIndex() == 0){                       
+            comboBoxPaquetes.addItem("xd");            
+        }
+        if(comboBoxPuntoControl.getSelectedIndex() == 1){                       
+            comboBoxPaquetes.addItem("xd");   
+            comboBoxPaquetes.addItem("xd");    
+        }
+        if(comboBoxPuntoControl.getSelectedIndex() == 2){                       
+            comboBoxPaquetes.addItem("xd"); 
+            comboBoxPaquetes.addItem("xd");    
+            comboBoxPaquetes.addItem("xd");    
+        }
+        if(comboBoxPuntoControl.getSelectedIndex() == 3){                       
+            comboBoxPaquetes.addItem("xd");
+            comboBoxPaquetes.addItem("xd");    
+            comboBoxPaquetes.addItem("xd");    
+            comboBoxPaquetes.addItem("xd");    
+        }
+    }//GEN-LAST:event_comboBoxPuntoControlItemStateChanged
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        comboBoxPaquetes.setEnabled(false);
+        comboBoxPuntoControl.setEnabled(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -90,6 +309,21 @@ public class MenuOperador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LblCantidadPuntosControlAsignados;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JTextField cajaTextoHoras;
+    private javax.swing.JComboBox<String> comboBoxPaquetes;
+    private javax.swing.JComboBox<String> comboBoxPuntoControl;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lblCantidadHoras;
+    private javax.swing.JLabel lblNombreOperador;
+    private javax.swing.JLabel lblPuntosControlAsignados;
+    private javax.swing.JLabel lblSeleccionaPaquete;
+    private javax.swing.JLabel lblSeleccionaPuntoControl;
+    private javax.swing.JPanel panelDatos;
     // End of variables declaration//GEN-END:variables
 }
