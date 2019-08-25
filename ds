@@ -1,0 +1,41 @@
+[33mcommit 461d5495a61444eb9b8c9ce8b7216b2d62114309[m[33m ([m[1;36mHEAD -> [m[1;32mrecepcionista[m[33m)[m
+Author: Grifiun <denii.grifon@gmail.com>
+Date:   Sat Aug 24 03:15:18 2019 -0600
+
+    interfaz recepcionista
+
+[33mcommit c998d061ce7359cf9f67e46ce1e1ce5af1fa001b[m
+Author: Grifiun <denii.grifon@gmail.com>
+Date:   Sat Aug 24 02:25:05 2019 -0600
+
+    menu operador
+
+[33mcommit c484123f624eee92b092d565176adb33c74cb768[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Grifiun <denii.grifon@gmail.com>
+Date:   Fri Aug 23 03:26:28 2019 -0600
+
+    botones y todo lo relacionado a la ventana de Administrador
+
+[33mcommit d317b963dab6945d30cf28f32ad017b6de841f32[m
+Author: Grifiun <denii.grifon@gmail.com>
+Date:   Thu Aug 22 22:58:16 2019 -0600
+
+    creacion proyecto y clases
+
+[33mcommit 92b7422262f6901b9bc6acbbfa9bf2f119a812aa[m
+Author: Grifiun <denii.grifon@gmail.com>
+Date:   Wed Aug 21 20:07:22 2019 -0600
+
+    Diagrama de tablas
+
+[33mcommit 7dc1121f2c4dfeca78ea987a3a13b1671776463b[m
+Author: Grifiun <denii.grifon@gmail.com>
+Date:   Wed Aug 21 18:06:19 2019 -0600
+
+    diagrama de clases y diagrama ER
+
+[33mcommit 76673130d4121c96421adad7ebb3c9eaa9d9a13a[m
+Author: Grifiun <denii.grifon@gmail.com>
+Date:   Sat Aug 17 18:05:52 2019 -0600
+
+    inicializar git
