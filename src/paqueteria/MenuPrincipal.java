@@ -4,7 +4,11 @@
  * and open the template in the editor.
  */
 package paqueteria;
-
+import com.mysql.cj.xdevapi.Statement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 /**
  *
  * @author grifiun
@@ -164,6 +168,24 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 new MenuPrincipal().setVisible(true);
             }
         });
+    }
+    
+    private void ej(){
+        Connection conection = null;
+        String user = "root";
+        String pass = "123";
+        String stringConection = "jdbc:mysql://localhost:3306/paqueteria";
+        try{
+        conection = DriverManager.getConnection(stringConection, user, pass);
+            System.out.println("Conexion: "+conection.getCatalog() );
+            //statement            
+            
+            java.sql.Statement declaracion = conection.createStatement();
+            ResultSet resultado = declaracion.executeQuery("SELECT * FROM usuarios");
+            
+        }catch(SQLException e){
+            System.out.println("ERROR: fallo la conexion");
+        }
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
