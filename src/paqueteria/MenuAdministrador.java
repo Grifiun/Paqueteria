@@ -5,17 +5,22 @@
  */
 package paqueteria;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author grifiun
  */
 public class MenuAdministrador extends javax.swing.JFrame {
     EnlaceJDBC enlace = new EnlaceJDBC();
+    int codRutaTemporal;
     /**
      * Creates new form MenuAdministrador
      */
     public MenuAdministrador() {
         initComponents();
+        destinosDisponibles.setVisible(false);
         desactivarPaneles();
     }
 
@@ -46,6 +51,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
         btnAgregar = new javax.swing.JButton();
         cajaTextoDato3 = new javax.swing.JTextField();
         lblCajaTexto3 = new javax.swing.JLabel();
+        destinosDisponibles = new javax.swing.JComboBox<>();
         lblTitulo2 = new javax.swing.JLabel();
         panelModificarRutas = new javax.swing.JPanel();
         comboBoxPuntosControl = new javax.swing.JComboBox<>();
@@ -110,7 +116,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
         });
 
         btnReportes.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
-        btnReportes.setText("Reportes");
+        btnReportes.setText("Crear Usuarios");
         btnReportes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnReportesActionPerformed(evt);
@@ -186,6 +192,8 @@ public class MenuAdministrador extends javax.swing.JFrame {
         lblCajaTexto3.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         lblCajaTexto3.setText("jLabel1");
 
+        destinosDisponibles.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout panelDatosLayout = new javax.swing.GroupLayout(panelDatos);
         panelDatos.setLayout(panelDatosLayout);
         panelDatosLayout.setHorizontalGroup(
@@ -207,6 +215,8 @@ public class MenuAdministrador extends javax.swing.JFrame {
                             .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(cajaTextoDato2)
                     .addComponent(cajaTextoDato1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(destinosDisponibles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelDatosLayout.setVerticalGroup(
@@ -215,7 +225,8 @@ public class MenuAdministrador extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(panelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cajaTextoDato3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCajaTexto3))
+                    .addComponent(lblCajaTexto3)
+                    .addComponent(destinosDisponibles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11)
                 .addGroup(panelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(panelDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -247,6 +258,11 @@ public class MenuAdministrador extends javax.swing.JFrame {
         lblNuevaTarifaPuntoControl.setText("Nueva tarifa punto de control:");
 
         btnGuardarNombre.setText("guardar nombre");
+        btnGuardarNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarNombreActionPerformed(evt);
+            }
+        });
 
         NuevoNombrePuntoControl.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         NuevoNombrePuntoControl.setText("Nuevo nombre punto de control:");
@@ -255,6 +271,11 @@ public class MenuAdministrador extends javax.swing.JFrame {
         lblCodigoPControl.setText("codigo de punto de control a modificar:");
 
         btnGuardarCambios.setText("guardar cambios");
+        btnGuardarCambios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarCambiosActionPerformed(evt);
+            }
+        });
 
         btnSalir.setText("salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -345,16 +366,18 @@ public class MenuAdministrador extends javax.swing.JFrame {
                         .addComponent(panelOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(lblTitulo2, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(38, 38, 38)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(12, 12, 12)
-                                        .addComponent(panelModificarRutas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(panelDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 707, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(72, Short.MAX_VALUE))))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(lblTitulo2, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(50, 50, 50)
+                                        .addComponent(panelModificarRutas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 72, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(panelDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -380,11 +403,18 @@ public class MenuAdministrador extends javax.swing.JFrame {
 
     private void btnCrearRutasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearRutasActionPerformed
         // TODO add your handling code here:
+        destinosDisponibles.setVisible(true);
         modificarEstadoBotonesPanelOpciones(false);
-        activarComponentesPanelDatos(true, true, true, true, true, false, true, true, false);
+        activarComponentesPanelDatos(true, true, true, true, true, true, true, true, false);
         panelDatos.setVisible(true);
         lblTitulo2.setText("CREAR RUTAS");
         establecerTextosCrearRutaParte1();
+            ArrayList<String> listaDestinos = enlace.destinosDisp();
+            destinosDisponibles.removeAllItems();
+            
+            for(int i = 0; i < listaDestinos.size(); i++){
+                destinosDisponibles.addItem(listaDestinos.get(i));
+            }  
     }//GEN-LAST:event_btnCrearRutasActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
@@ -401,28 +431,91 @@ public class MenuAdministrador extends javax.swing.JFrame {
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         String textoBoton = btnGuardar.getText();
         String titulo2 = lblTitulo2.getText();
-        if(titulo2 == "CREAR RUTAS"){
-            btnAgregar.setVisible(true);
-            cambiarTextoLabelsDatos("Nombre del punto de control:", "Ingresar codigo del punto de control:", "");
-            cambiarTextoBtnGuardar("guardar ruta");
-            btnAtras.setVisible(false);
-            lblTitulo2.setText("AGREGAR PUNTOS DE CONTROL");
+
+        if(titulo2 == "CREAR RUTAS"){      
+                      
+            
+            if(ManejadorError.verificarCampo(cajaTextoDato1.getText()) && ManejadorError.verificarCampo(cajaTextoDato2.getText())){
+                try{
+                    int codRuta = Integer.parseInt(cajaTextoDato2.getText());
+                    String nombreRuta = cajaTextoDato1.getText();
+                    int codDestino = Integer.parseInt((String) destinosDisponibles.getSelectedItem());
+                    codRutaTemporal = codRuta;
+                    enlace.crearRutas(codRuta, nombreRuta, codDestino);                    
+                    btnAgregar.setVisible(true);
+                    
+                    cambiarTextoLabelsDatos("Nombre del punto de control:", "Ingresar codigo del punto de control:", "cantidad cola:");
+                    cambiarTextoBtnGuardar("guardar ruta");                    
+                    btnAtras.setVisible(false);
+                    lblTitulo2.setText("AGREGAR PUNTOS DE CONTROL");
+                    cajaTextoDato3.setVisible(true);
+                    destinosDisponibles.setVisible(false);                    
+                    JOptionPane.showMessageDialog(this, MensajesErrores.DATOS_GUARDADOS);
+                }catch(NumberFormatException e){
+                    JOptionPane.showMessageDialog(this, MensajesErrores.NO_SON_NUMEROS);                
+                }
+            }else{
+                JOptionPane.showMessageDialog(this, MensajesErrores.DATOS_FALTANTES);
+            }
+            
+            
+            
+            
         }
-        if(titulo2 == "AGREGAR PUNTOS DE CONTROL"){
-            modificarEstadoBotonesPanelOpciones(true);
-            panelDatos.setVisible(false); 
-            btnAtras.setVisible(true);
-            lblTitulo2.setVisible(false);
+        if(titulo2 == "AGREGAR PUNTOS DE CONTROL"){       
+                    modificarEstadoBotonesPanelOpciones(true);
+                    panelDatos.setVisible(false); 
+                    btnAtras.setVisible(true);
+                    lblTitulo2.setVisible(false);                           
+                 
+            
+            
         }
         if(titulo2 == "MODIFICAR RUTAS"){
             panelModificarRutas.setVisible(true);
             panelDatos.setVisible(false);
             
+            ArrayList<String> listaPC = enlace.destinosDisp();
+            comboBoxPuntosControl.removeAllItems();
+            
+            for(int i = 0; i < listaPC.size(); i++){
+                comboBoxPuntosControl.addItem(listaPC.get(i));
+            }  
+            
+             if(ManejadorError.verificarCampo(cajaTextoDato2.getText())){
+                try{
+                    int codR = Integer.parseInt(cajaTextoDato2.getText());
+                    codRutaTemporal = codR;
+                    modificarEstadoBotonesPanelOpciones(true);
+                    panelDatos.setVisible(false); 
+                    lblTitulo2.setVisible(false);
+                    
+                }catch(NumberFormatException e){
+                    JOptionPane.showMessageDialog(this, MensajesErrores.NO_SON_NUMEROS);                }
+            }else{
+                JOptionPane.showMessageDialog(this, MensajesErrores.DATOS_FALTANTES);
+            }  
+            
+            
         }
-        if(titulo2 == "CREAR DESTINOS"){
-            modificarEstadoBotonesPanelOpciones(true);
-            panelDatos.setVisible(false); 
-            lblTitulo2.setVisible(false);
+        if(titulo2 == "CREAR DESTINOS"){            
+             
+            if(ManejadorError.verificarCampo(cajaTextoDato1.getText()) && ManejadorError.verificarCampo(cajaTextoDato2.getText()) && ManejadorError.verificarCampo(cajaTextoDato3.getText())){
+                try{
+                    int codDest = Integer.parseInt(cajaTextoDato1.getText());
+                    String nombreDest = cajaTextoDato3.getText();
+                    int tarifa = Integer.parseInt(cajaTextoDato2.getText());
+                    enlace.crearDestino(codDest, nombreDest, tarifa);
+                    modificarEstadoBotonesPanelOpciones(true);
+                    panelDatos.setVisible(false); 
+                    lblTitulo2.setVisible(false);
+                    JOptionPane.showMessageDialog(this, MensajesErrores.DATOS_GUARDADOS);
+                }catch(NumberFormatException e){
+                    JOptionPane.showMessageDialog(this, MensajesErrores.NO_SON_NUMEROS);                }
+            }else{
+                JOptionPane.showMessageDialog(this, MensajesErrores.DATOS_FALTANTES);
+            }  
+                     
             
         }  
         if(titulo2 == "MODIFICAR DESTINOS"){
@@ -431,18 +524,28 @@ public class MenuAdministrador extends javax.swing.JFrame {
             lblTitulo2.setVisible(false);
         }  
         if(titulo2 == "MODIFICAR TARIFA GLOBAL"){
-            modificarEstadoBotonesPanelOpciones(true);
-            panelDatos.setVisible(false); 
-            lblTitulo2.setVisible(false);
             
-            modificarTarifaGlobal(Integer.parseInt(cajaTextoDato1.getText()));
+            String texto = cajaTextoDato1.getText();
+            if(texto.equals(""))
+                JOptionPane.showMessageDialog(this, MensajesErrores.DATOS_FALTANTES);
+            else{
+                modificarEstadoBotonesPanelOpciones(true);
+                panelDatos.setVisible(false); 
+                lblTitulo2.setVisible(false);
+                modificarTarifaGlobal(Integer.parseInt(cajaTextoDato1.getText()));
+                JOptionPane.showMessageDialog(this, MensajesErrores.DATOS_GUARDADOS);
+            }
+            
         } 
-        
+        cajaTextoDato1.setText("");
+        cajaTextoDato2.setText("");
+        cajaTextoDato3.setText("");
     }//GEN-LAST:event_btnGuardarActionPerformed
+    
     
     private void establecerTextosCrearRutaParte1(){
         btnAgregar.setVisible(false);
-        cambiarTextoLabelsDatos("Nombre de la ruta:", "Ingresar codigo de ruta:", "");
+        cambiarTextoLabelsDatos("Nombre de la ruta:", "Ingresar codigo de ruta:", "Destino de la ruta:");
         cambiarTextoBtnGuardar("siguiente");
     }
     
@@ -458,6 +561,19 @@ public class MenuAdministrador extends javax.swing.JFrame {
     
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
+        if(ManejadorError.verificarCampo(cajaTextoDato1.getText()) && ManejadorError.verificarCampo(cajaTextoDato2.getText()) && ManejadorError.verificarCampo(cajaTextoDato3.getText())){
+                try{
+                    int codPC = Integer.parseInt(cajaTextoDato2.getText());
+                    String nombrePC = cajaTextoDato1.getText();
+                    int cola = Integer.parseInt(cajaTextoDato3.getText());
+                    enlace.crearPuntoControl(codPC, codRutaTemporal, nombrePC, cola);                    
+                                             
+                    JOptionPane.showMessageDialog(this, MensajesErrores.DATOS_GUARDADOS);
+                }catch(NumberFormatException e){
+                    JOptionPane.showMessageDialog(this, MensajesErrores.NO_SON_NUMEROS);                }
+            }else{
+                JOptionPane.showMessageDialog(this, MensajesErrores.DATOS_FALTANTES);
+            }
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnModificarRutasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarRutasActionPerformed
@@ -467,6 +583,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
         panelDatos.setVisible(true);
         lblTitulo2.setText("MODIFICAR RUTAS");
         btnGuardar.setText("modificar ruta");
+        lblCajaTexto2.setText("Ingresar codigo ruta:");
     }//GEN-LAST:event_btnModificarRutasActionPerformed
 
     private void btnCrearDestinosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearDestinosActionPerformed
@@ -511,6 +628,40 @@ public class MenuAdministrador extends javax.swing.JFrame {
         panelModificarRutas.setVisible(false); 
         lblTitulo2.setVisible(false);
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnGuardarNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarNombreActionPerformed
+        // TODO add your handling code here:
+         if(ManejadorError.verificarCampo(cajaTextoNuevoNombreRuta.getText())){
+                try{
+                    
+                    String nombreR = cajaTextoNuevoNombreRuta.getText();
+                   
+                    //enlace.crearDestino(codDest, nombreDest, tarifa);
+                    
+                    JOptionPane.showMessageDialog(this, MensajesErrores.NOMBRE_RUTA_CAMBIADO);
+                }catch(NumberFormatException e){
+                    JOptionPane.showMessageDialog(this, MensajesErrores.NO_SON_NUMEROS);                }
+            }else{
+                JOptionPane.showMessageDialog(this, MensajesErrores.DATOS_FALTANTES);
+            }  
+    }//GEN-LAST:event_btnGuardarNombreActionPerformed
+
+    private void btnGuardarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCambiosActionPerformed
+        // TODO add your handling code here:
+        if(ManejadorError.verificarCampo(cajaTextoNuevaTarifaPControl.getText()) && ManejadorError.verificarCampo(cajaTextoNuevoNombrePControl.getText())){
+                try{
+                    int tarifa = Integer.parseInt(cajaTextoNuevaTarifaPControl.getText());
+                    String nombreNPC = cajaTextoNuevoNombrePControl.getText();
+                    int codPC = Integer.parseInt((String)comboBoxPuntosControl.getSelectedItem());
+                    
+                    
+                    JOptionPane.showMessageDialog(this, MensajesErrores.DATOS_GUARDADOS);
+                }catch(NumberFormatException e){
+                    JOptionPane.showMessageDialog(this, MensajesErrores.NO_SON_NUMEROS);                }
+            }else{
+                JOptionPane.showMessageDialog(this, MensajesErrores.DATOS_FALTANTES);
+        }  
+    }//GEN-LAST:event_btnGuardarCambiosActionPerformed
 
     private void modificarEstadoBotonesPanelOpciones(boolean estado){
         btnCrearRutas.setEnabled(estado);
@@ -581,6 +732,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
     private javax.swing.JTextField cajaTextoNuevoNombrePControl;
     private javax.swing.JTextField cajaTextoNuevoNombreRuta;
     private javax.swing.JComboBox<String> comboBoxPuntosControl;
+    private javax.swing.JComboBox<String> destinosDisponibles;
     private javax.swing.JLabel lblCajaTexto1;
     private javax.swing.JLabel lblCajaTexto2;
     private javax.swing.JLabel lblCajaTexto3;
