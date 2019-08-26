@@ -160,11 +160,11 @@ public class EnlaceJDBC {
         }
     }
     
-    protected void crearUsuario (int cui, String nombre, int edad, int rol, String pass){
+    protected void crearUsuario (long cui, String nombre, int edad, int rol, String pass){
         PreparedStatement dp;
         try {
             dp = conection.prepareStatement("INSERT Usuarios VALUES (?, ?, ?, ?, ?, ?)");
-            dp.setInt(1, cui);
+            dp.setLong(1, cui);
             dp.setString(2, nombre);
             dp.setInt(3, edad);
             dp.setInt(4, rol);

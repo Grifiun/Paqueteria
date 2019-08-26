@@ -376,7 +376,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
                                 .addGap(0, 72, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(panelDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                                .addComponent(panelDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 799, Short.MAX_VALUE)))
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
@@ -435,7 +435,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
         if(titulo2 == "CREAR RUTAS"){      
                       
             
-            if(ManejadorError.verificarCampo(cajaTextoDato1.getText()) && ManejadorError.verificarCampo(cajaTextoDato2.getText())){
+            if(ManejadorError.verificarCampo(cajaTextoNuevaTarifaPControl.getText()) && ManejadorError.verificarCampo(cajaTextoDato2.getText())){
                 try{
                     int codRuta = Integer.parseInt(cajaTextoDato2.getText());
                     String nombreRuta = cajaTextoDato1.getText();

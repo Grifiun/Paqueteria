@@ -33,16 +33,16 @@
               </Group>
               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="cui" max="32767" attributes="0"/>
+                  <Component id="txtCui" max="32767" attributes="0"/>
                   <Component id="jLabel1" max="32767" attributes="0"/>
-                  <Component id="nombre" alignment="0" max="32767" attributes="0"/>
-                  <Component id="edad" alignment="0" max="32767" attributes="0"/>
-                  <Component id="pass" alignment="0" max="32767" attributes="0"/>
-                  <Component id="rol" max="32767" attributes="0"/>
+                  <Component id="txtNombre" alignment="0" max="32767" attributes="0"/>
+                  <Component id="txtEdad" alignment="0" max="32767" attributes="0"/>
+                  <Component id="txtPass" alignment="0" max="32767" attributes="0"/>
+                  <Component id="cbRol" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="298" max="32767" attributes="0"/>
+              <EmptySpace pref="302" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -53,27 +53,27 @@
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="cui" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtCui" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="nombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="edad" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtEdad" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="pass" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtPass" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="rol" min="-2" max="-2" attributes="0"/>
+              <Component id="cbRol" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="375" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -85,18 +85,18 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Ubuntu" size="48" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="REPORTES"/>
+        <Property name="text" type="java.lang.String" value="USUARIOS"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="cui">
+    <Component class="javax.swing.JTextField" name="txtCui">
     </Component>
-    <Component class="javax.swing.JTextField" name="nombre">
+    <Component class="javax.swing.JTextField" name="txtNombre">
     </Component>
-    <Component class="javax.swing.JTextField" name="edad">
+    <Component class="javax.swing.JTextField" name="txtEdad">
     </Component>
-    <Component class="javax.swing.JTextField" name="pass">
+    <Component class="javax.swing.JTextField" name="txtPass">
     </Component>
-    <Component class="javax.swing.JComboBox" name="rol">
+    <Component class="javax.swing.JComboBox" name="cbRol">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">

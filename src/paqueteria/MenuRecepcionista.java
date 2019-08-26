@@ -372,6 +372,8 @@ public class MenuRecepcionista extends javax.swing.JFrame {
     private void btnVerificarNitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificarNitActionPerformed
         // TODO add your handling code here:
         //EJEMPLO DE OCULTAR PANELES
+        
+        
         String nit = cajaTextoNitCliente.getText();
         System.out.println(nit);
         if(nit.equals("1")){
