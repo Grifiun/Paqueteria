@@ -4,11 +4,9 @@
  * and open the template in the editor.
  */
 package paqueteria;
-import com.mysql.cj.xdevapi.Statement;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author grifiun
@@ -119,19 +117,42 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-       String cui = cajaTextoCUI.getText();
-       if(cui.equals("1")){
-           MenuAdministrador menuAdmin = new MenuAdministrador();
-           menuAdmin.setVisible(true);
-       }
-       if(cui.equals("2")){
-           MenuOperador menuOperador = new MenuOperador();
-        menuOperador.setVisible(true);
-       }
-       if(cui.equals("3")){
-           MenuRecepcionista menuRecepcionista = new MenuRecepcionista();
-           menuRecepcionista.setVisible(true);
-       }
+        long cui = Long.parseLong(cajaTextoCUI.getText());       
+        String password = cajaTextoContra.getText();
+       
+        if(ManejadorError.verificarCUI(cajaTextoCUI.getText()) && ManejadorError.verificarCampo(password)){
+            EnlaceJDBC enlace = new EnlaceJDBC();
+            int rol;
+            rol = enlace.verificarPass(cui, password);
+            switch(rol){
+                case 0:
+                   JOptionPane.showMessageDialog(this, MensajesErrores.USUARIO_CONTRA_INCORRECTOS); 
+                   break;
+                case 1:
+                   MenuAdministrador menuAdmin = new MenuAdministrador();
+                   menuAdmin.setVisible(true);
+                   break;
+                case 2:
+                   MenuOperador menuOperador = new MenuOperador();
+                   menuOperador.setVisible(true);
+                   break;
+                case 3:
+                   MenuRecepcionista menuRecepcionista = new MenuRecepcionista();
+                   menuRecepcionista.setVisible(true);
+                   break;
+                case 4:
+                    JOptionPane.showMessageDialog(this, MensajesErrores.USUARIO_SIN_ACCESO); 
+                    break;
+
+            }
+        }else{
+            if(ManejadorError.verificarCUI(cajaTextoCUI.getText()) == false)
+                JOptionPane.showMessageDialog(this, MensajesErrores.CUI_INVALIDO); 
+            else
+                JOptionPane.showMessageDialog(this, MensajesErrores.DATOS_FALTANTES); 
+        }
+       
+       
        
     }//GEN-LAST:event_btnLoginActionPerformed
 
@@ -170,23 +191,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
     }
     
-    private void ej(){
-        Connection conection = null;
-        String user = "root";
-        String pass = "123";
-        String stringConection = "jdbc:mysql://localhost:3306/paqueteria";
-        try{
-        conection = DriverManager.getConnection(stringConection, user, pass);
-            System.out.println("Conexion: "+conection.getCatalog() );
-            //statement            
-            
-            java.sql.Statement declaracion = conection.createStatement();
-            ResultSet resultado = declaracion.executeQuery("SELECT * FROM usuarios");
-            
-        }catch(SQLException e){
-            System.out.println("ERROR: fallo la conexion");
-        }
-    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;

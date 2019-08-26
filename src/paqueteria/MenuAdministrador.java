@@ -10,7 +10,7 @@ package paqueteria;
  * @author grifiun
  */
 public class MenuAdministrador extends javax.swing.JFrame {
-
+    EnlaceJDBC enlace = new EnlaceJDBC();
     /**
      * Creates new form MenuAdministrador
      */
@@ -435,6 +435,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
             panelDatos.setVisible(false); 
             lblTitulo2.setVisible(false);
             
+            modificarTarifaGlobal(Integer.parseInt(cajaTextoDato1.getText()));
         } 
         
     }//GEN-LAST:event_btnGuardarActionPerformed
@@ -518,6 +519,10 @@ public class MenuAdministrador extends javax.swing.JFrame {
         btnModificarDestinos.setEnabled(estado);
         btnModificarTarifaGlobal.setEnabled(estado);
         btnReportes.setEnabled(estado);
+    }
+    
+    private void modificarTarifaGlobal(int tarifa){
+        enlace.modificarTarifaGlobal(tarifa);
     }
     
     /**
